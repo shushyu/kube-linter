@@ -209,7 +209,7 @@ func Command() *cobra.Command {
 	c.Flags().StringVar(&configPath, "config", "", "Path to config file")
 	c.Flags().BoolVarP(&failIfNoObjects, "fail-if-no-objects-found", "", false, "Return non-zero exit code if no valid objects are found or failed to parse")
 	c.Flags().BoolVarP(&verbose, "verbose", "v", false, "Enable verbose logging")
-	c.Flags().StringSliceVar(&formats, "format", []string{common.PlainFormat},
+	c.Flags().StringSliceVar(&formats, "format", []string{common.PrettyFormat},
 		fmt.Sprintf("Output format (can be repeated). Allowed values: %s",
 			strings.Join(formatters.GetEnabledFormatters(), ", ")))
 	c.Flags().StringSliceVar(&outputs, "output", []string{},
